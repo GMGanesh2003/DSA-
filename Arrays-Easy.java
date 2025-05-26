@@ -2,7 +2,7 @@ Sure bro! Here are the 3 methods with code snippets for each of those questions 
 
 1. Find Largest Element in Array
 
-// Method 1: Single Scan
+// Method 1: Single 
 int findLargest(int[] arr) {
     int max = arr[0];
     for(int i=1; i<arr.length; i++){
