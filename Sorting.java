@@ -3,7 +3,7 @@ package Sorting;
 
 import java.util.Arrays;
 
-public class SelctionSort {
+public class SelctionSort { grow
   
 public static void main(String[]args){
    
