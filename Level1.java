@@ -28,3 +28,51 @@ public class Main{
        
        
 }
+
+2)Palindorme Number 
+    public class Main {
+    public static void main(String[] args) {
+        int n = 121;
+        System.out.println(isPalindromeString(n));  // Output: true
+    }
+
+    // Method 1: Convert to string and compare reversed version
+    static boolean isPalindromeString(int n) {
+        if (n < 0) return false; // Negative numbers are not palindromes
+
+        String str = Integer.toString(n);
+        String reversed = new StringBuilder(str).reverse().toString();
+
+        return str.equals(reversed);
+    }
+}
+//second apparoach number 
+public class Main {
+    public static void main(String[] args) {
+        int n = 121;
+        System.out.println(isPalindromeDigits(n));  // Output: true
+    }
+
+    // Method 2: Reverse digits and compare
+    static boolean isPalindromeDigits(int n) {
+        if (n < 0) return false; // Negative numbers are not palindromes
+
+        int original = n;
+        int reversed = 0;
+
+        while (n != 0) {
+            int digit = n % 10;
+            reversed = reversed * 10 + digit;
+            n /= 10;
+        }
+
+        return original == reversed;
+    }
+}
+
+
+
+
+
+
+
