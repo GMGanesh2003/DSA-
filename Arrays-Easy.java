@@ -1,4 +1,3 @@
-Sure bro! Here are the 3 methods with code snippets for each of those questions where applicable.
 
 1. Find Largest Element in Array
 
