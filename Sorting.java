@@ -75,3 +75,61 @@ public class Bubblesort {
     }
 
 }
+
+
+//merge sort -->divide and couqor ->O(nlogn)
+//merge sort --> divide and ocnque we need to divide the array into single elemnt then ceate temp array nd mergethem in srting order 
+
+
+  import java.util.*;
+  public class Main{
+      public static void main(String[]args){
+          int[]arr = {4,3,2,5,6,7,1};
+           mergeSort(arr,0,arr.length-1);
+           System.out.println("Sorted Array : "+Arrays.toString(arr));
+          
+      }
+      
+       public static void mergeSort(int[]arr,int left,int right){
+           //base : divide until single lemnets 
+              if(left<right){
+              //divde the left half and righthagf findout mid 
+              int mid = (left+right)/2;
+              
+              //divide lefthalf 
+              mergeSort(arr,left,mid);
+              mergeSort(arr,mid+1,right);
+              
+              //sort the two halfsun arrays 
+              merge(arr,left,mid,right);
+              }
+       }
+       //mergeing two sortedhalf arrays 
+       public static void merge(int[]arr,int left,int mid,int right){
+             //create two temparray 
+             int n1 = mid - left +1;
+             int n2 = right - mid;
+             
+             int[]L = new int[n1];
+             int[]R = new int[n2];
+             
+             //copy the data 
+               for(int i=0;i<n1;i++)L[i]=arr[left+i];
+               for(int j=0;j<n2;j++)R[j]=arr[mid+1+j];
+               
+               //sort the two half into one half 
+               int i=0;int j =0; int k = left;
+               while(i<n1&&j<n2){
+                   if(L[i]<=R[j]){
+                       arr[k++]=L[i++];
+                   }else{
+                       arr[k++]=R[j++];
+                   }
+               }
+             
+             
+             //coopy remaing elemnts 
+             while(i<n1)arr[k++]=L[i++];
+             while(j<n2)arr[k++]=R[j++];
+       }
+  }
