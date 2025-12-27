@@ -1,0 +1,42 @@
+import java.util.*;
+public class Main{
+    public static void main(String[]args){
+        //bublle sort -> we need to check adjecnt elemnts and swap inorder 
+        //it takes 0(nsquare)
+        //if already sorted we need stop it -->0(need
+        
+        int[]arr = {6,5,4,3,2,1};
+        
+        int[]res = bubleSort(arr);
+        
+        System.out.println(Arrays.toString(res));
+    }
+    
+    
+     public static int[] bubleSort(int[]arr){
+         
+           int n = arr.length;
+           
+           //run first loop until n -1 
+           
+           for(int i=0;i<n-1;i++){
+               boolean swapped = false;
+               
+               for(int j=0;j<n-1-i;j++){
+                   //compare 
+                   if(arr[j]>arr[j+1]){
+                       //we need to swap 
+                       int temp = arr[j];
+                       arr[j]   = arr[j+1];
+                       arr[j+1] = temp;
+                       swapped = true;
+                   }
+               }
+           
+           
+        if(!swapped)break;
+        }   //if we dont need swap so it already sorted 
+           
+           return arr;
+     }
+}
